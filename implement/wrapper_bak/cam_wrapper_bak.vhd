@@ -66,20 +66,21 @@ ENTITY cam_wrapper IS
   PORT (
     
     CLK             : IN  STD_LOGIC := '0';
-    DIN             : IN  STD_LOGIC_VECTOR(127 DOWNTO 0)  := (OTHERS => '0');
+    DIN             : IN  STD_LOGIC_VECTOR(7 DOWNTO 0)  := (OTHERS => '0');
+
     BUSY            : OUT STD_LOGIC := '0';
     MATCH           : OUT STD_LOGIC := '0';
-    MATCH_ADDR      : OUT STD_LOGIC_VECTOR(9 DOWNTO 0)  := (OTHERS => '0');
+    MATCH_ADDR      : OUT STD_LOGIC_VECTOR(3 DOWNTO 0)  := (OTHERS => '0')
 
-    DATA_MASK       : IN  STD_LOGIC_VECTOR(127 DOWNTO 0)  := (OTHERS => '0');
-    WE              : IN  STD_LOGIC := '0' ;
-    WR_ADDR         : IN  STD_LOGIC_VECTOR(9 DOWNTO 0)  := (OTHERS => '0');
-    CMP_DIN         : IN  STD_LOGIC_VECTOR(127 DOWNTO 0)  := (OTHERS => '0');
-    CMP_DATA_MASK   : IN  STD_LOGIC_VECTOR(127 DOWNTO 0)  := (OTHERS => '0');
-    EN              : IN  STD_LOGIC := '0';
+    DATA_MASK       : IN  STD_LOGIC_VECTOR(7 DOWNTO 0)  := (OTHERS => '0')
+    WE              : IN  STD_LOGIC := '0'
+    WR_ADDR         : IN  STD_LOGIC_VECTOR(3 DOWNTO 0)  := (OTHERS => '0')
+    CMP_DIN         : IN  STD_LOGIC_VECTOR(7 DOWNTO 0)  := (OTHERS => '0')
+    CMP_DATA_MASK   : IN  STD_LOGIC_VECTOR(7 DOWNTO 0)  := (OTHERS => '0')
+    EN              : IN  STD_LOGIC := '0'
 
-    MULTIPLE_MATCH  : OUT STD_LOGIC := '0';
-    SINGLE_MATCH    : OUT STD_LOGIC := '0';
+    MULTIPLE_MATCH  : OUT STD_LOGIC := '0'
+    SINGLE_MATCH    : OUT STD_LOGIC := '0'
     READ_WARNING    : OUT STD_LOGIC := '0'
     
     );
@@ -143,21 +144,21 @@ BEGIN
    
   GENERIC MAP (
     
-   C_ADDR_TYPE                => 0, 
-   C_DEPTH                    => 1024, 
-   C_FAMILY                   => "virtex6",
-   C_HAS_CMP_DIN              => 1,
-   C_HAS_EN                   => 1,
-   C_HAS_MULTIPLE_MATCH       => 1,
-   C_HAS_READ_WARNING         => 1,
-   C_HAS_SINGLE_MATCH         => 1,
-   C_HAS_WE                   => 1,
-   C_MATCH_RESOLUTION_TYPE    => 0,
-   C_MEM_INIT                 => 1,
-   C_MEM_TYPE                 => 0,
-   C_REG_OUTPUTS              => 0,
-   C_TERNARY_MODE             => 1,
-   C_WIDTH                    => 128
+    C_ADDR_TYPE             => 0,
+    C_DEPTH                 => 16,
+    C_FAMILY                => "virtex6",
+    C_HAS_CMP_DIN           => 1,
+    C_HAS_EN                => 1,
+    C_HAS_MULTIPLE_MATCH    => 1, 
+    C_HAS_READ_WARNING      => 1,
+    C_HAS_SINGLE_MATCH      => 1,
+    C_HAS_WE                => 1,
+    C_MATCH_RESOLUTION_TYPE => 0,
+    C_MEM_INIT              => 1,
+    C_MEM_TYPE              => 0,
+    C_REG_OUTPUTS           => 0,
+    C_TERNARY_MODE          => 1,
+    C_WIDTH                 => 8
 
     )
 
