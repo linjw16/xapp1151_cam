@@ -68,7 +68,7 @@ USE ieee.std_logic_1164.ALL;
 -- Files into or from a memory stored as a single STD_LOGIC_VECTOR
 -------------------------------------------------------------------------------
 
-PACKAGE CAM_INIT_FILE_PACK_XST IS
+PACKAGE cam_init_file_pack_xst IS
 
 -------------------------------------------------------------------------------
 -- Procedure to pad the default data with zero if the length is
@@ -158,9 +158,9 @@ PACKAGE CAM_INIT_FILE_PACK_XST IS
 -------------------------------------------------------------------------------
   IMPURE FUNCTION find_num_of_lines( filename : IN string ) RETURN integer;
 
-END CAM_INIT_FILE_PACK_XST;
+END cam_init_file_pack_xst;
 
-PACKAGE BODY CAM_INIT_FILE_PACK_XST IS
+PACKAGE BODY cam_init_file_pack_xst IS
 
   -----------------------------------------------------------------------------
   -- Procedure to pad the default data with zero if the length is
@@ -419,4 +419,4 @@ PACKAGE BODY CAM_INIT_FILE_PACK_XST IS
 
   END write_meminit_file;
 
-END CAM_INIT_FILE_PACK_XST;
+END cam_init_file_pack_xst;
